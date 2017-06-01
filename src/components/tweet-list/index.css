@@ -1,0 +1,18 @@
+.tweet-list {
+    list-style: none;
+    text-align: left;
+    padding: 1em;
+}
+
+.tweet-list li {
+    background: white;
+}
+
+.tweet-list li:nth-child(odd){
+    background: lightblue;
+}
+
+.tweet-list-container{
+    height: 800px;
+    border: 3px dotted cornflowerblue;
+}
