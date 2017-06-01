@@ -9,7 +9,11 @@ class App extends Component {
     super(props);
 
     this.state = {
-      tweets: ['tweet 1', 'tweet 2', 'tweet 3', 'tweet 4']
+      tweets: [
+        { username: 'test-user', content: 'hey this is a test tweet!', date: new Date().toLocaleString() },
+        { username: 'test-user', content: 'hey this is a test tweet!', date: new Date().toLocaleString() },
+        { username: 'test-user', content: 'hey this is a test tweet!', date: new Date().toLocaleString() },
+      ]
     }
   }
   addTweet(value) {
@@ -21,7 +25,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>React Twitter Clone</h1>
-        <TweetForm addTweet={this.addTweet.bind(this)}  />
+        <TweetForm addTweet={this.addTweet.bind(this)} />
         <TweetList tweets={this.state.tweets} />
       </div>
     );

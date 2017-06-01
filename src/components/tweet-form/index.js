@@ -5,6 +5,7 @@ class TweetForm extends Component {
         super(props);
 
         this.state = {
+            username: '',
             value: ''
         }
     }
@@ -13,17 +14,30 @@ class TweetForm extends Component {
         this.setState({ value: event.target.value });
     }
 
-    handleSubmit(e){
+    handleChangeUsername(event) {
+        this.setState({ username: event.target.value });
+    }
+
+    handleSubmit(e) {
         e.preventDefault();
-        this.props.addTweet(this.state.value);
-        this.setState({ value: ''});
+        this.props.addTweet(
+            {
+                username: this.state.username,
+                content: this.state.value,
+                date: new Date().toLocaleString()
+            }
+        );
+        this.setState({ value: '' });
     }
 
     render() {
         return (
             <form onSubmit={this.handleSubmit.bind(this)}>
+                <label>Username:
+                    <input type="text" value={this.state.username} onChange={this.handleChangeUsername.bind(this)} />
+                </label>
                 <label>
-                    Write your tweet: 
+                    Write your tweet:
                     <input type="text" value={this.state.value} onChange={this.handleChange.bind(this)} />
                 </label>
                 <input type="submit" value="Submit" />

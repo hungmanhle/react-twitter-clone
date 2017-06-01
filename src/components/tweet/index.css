@@ -1,0 +1,16 @@
+.tweet-user {
+    width: 15%;
+    font-weight: 900;
+    color: green;
+    padding-right: 1em;
+}
+
+.tweet-content {
+    width: 65%;
+    padding-right: 1em;
+}
+
+.tweet-date {
+    width: 20%;
+    float: right;
+}

@@ -8,9 +8,9 @@ class TweetList extends Component {
             <div className='tweet-list-container'>
                 <ul className='tweet-list'>
                     {
-                        this.props.tweets.map((datum, i) => {
+                        this.props.tweets.map((tweet, i) => {
                             return (
-                                <Tweet content={datum} key={datum + i} />
+                                <Tweet tweet={tweet} key={tweet.content + i} />
                             );
                         })
                     }
